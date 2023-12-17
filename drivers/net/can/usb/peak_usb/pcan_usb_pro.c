@@ -127,13 +127,13 @@ static u8 *pcan_msg_init_empty(struct pcan_usb_pro_msg *pm,
 /*
  * add one record to a message being built
  */
-static int pcan_msg_add_rec(struct pcan_usb_pro_msg *pm, u8 id, ...)
+static int pcan_msg_add_rec(struct pcan_usb_pro_msg *pm, int id, ...)
 {
 	int len, i;
 	u8 *pc;
 	va_list ap;
 
-	va_start(ap, id);
+	va_start(ap, (double)id);
 
 	pc = pm->rec_ptr + 1;
 
